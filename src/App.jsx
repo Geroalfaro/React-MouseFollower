@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 
-function App() {
-const [enabled, setEnabled] = useState(false)
+const FollowMouse = () => {
+  const [enabled, setEnabled] = useState(false)
 const [position, setPosition] = useState({x: 0, y: 0})
 useEffect(() => {
   
@@ -19,7 +19,7 @@ return()=>{
 }, [enabled])
 
   return (
-    <main>
+    <>
       <div style={{
         position: 'absolute',
         backgroundColor:'#09f',
@@ -35,8 +35,19 @@ return()=>{
     <button onClick={() => setEnabled(!enabled)}>
       {enabled ? 'Desactivar' : 'Activar'}
       seguir puntero</button>
-      </main>
+      </>
   )
+}
+
+function App() {
+
+return(
+  <main>
+
+    <FollowMouse/>
+  </main>
+)
+
 }
 
 export default App
